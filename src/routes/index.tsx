@@ -347,6 +347,17 @@ function MapSection() {
             </div>
           )}
         </div>
+        <div className="mt-6 text-center">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Jorge+Julio+Costa+dos+Santos,+Belford+Roxo,+RJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card px-6 py-3 text-sm font-semibold text-card-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            <MapPin className="size-4 text-primary" />
+            Abrir endereço no Google Maps
+          </a>
+        </div>
       </div>
     </section>
   );
