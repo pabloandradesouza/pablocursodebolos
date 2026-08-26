@@ -530,7 +530,7 @@ function DiplomaSection() {
               </div>
 
               <div className="mt-8">
-                <CtaButton size="lg">QUERO MEU DIPLOMA PROFISSIONAL</CtaButton>
+                <CtaButton size="lg">GARANTIR MINHA VAGA AGORA</CtaButton>
               </div>
             </div>
           </div>
