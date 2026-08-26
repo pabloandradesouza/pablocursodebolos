@@ -14,6 +14,10 @@ import {
   ArrowRight,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
+import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
+import cakeArtistic2 from "../../public/images/cake-artistic-2.jpg";
+import cakeTechnique from "../../public/images/cake-technique.jpg";
+import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
