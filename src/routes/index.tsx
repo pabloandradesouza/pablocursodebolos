@@ -305,6 +305,53 @@ function InfoSection() {
   );
 }
 
+function MapSection() {
+  const browserKey = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY;
+  const placeId = "ChIJha-kCSlkmQAROkjdgWYhzSY";
+  const embedUrl = browserKey
+    ? `https://www.google.com/maps/embed/v1/place?key=${browserKey}&q=place_id:${placeId}&zoom=15`
+    : "";
+
+  return (
+    <section className="border-y border-border/30 bg-secondary/30 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+            ONDE ACONTECE O CURSO
+          </h2>
+          <p className="mt-3 flex items-center justify-center gap-2 text-muted-foreground">
+            <MapPin className="size-4 text-primary" />
+            Rua Jorge Julio Costa dos Santos — Belford Roxo
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-border/50 bg-card shadow-glow-card">
+          {embedUrl ? (
+            <iframe
+              title="Local do curso Pablo Bolos Decorados"
+              src={embedUrl}
+              width="100%"
+              height="100%"
+              loading="lazy"
+              className="aspect-video w-full border-0"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          ) : (
+            <div className="flex aspect-video flex-col items-center justify-center gap-4 bg-card p-8 text-center">
+              <MapPin className="size-12 text-muted-foreground" />
+              <p className="text-muted-foreground">
+                Mapa indisponível no momento. Endereço: Rua Jorge Julio Costa dos Santos — Belford
+                Roxo.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function AudienceSection() {
   const audiences = [
     {
