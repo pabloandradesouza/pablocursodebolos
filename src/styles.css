@@ -130,6 +130,9 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --hero-gradient: linear-gradient(135deg, oklch(0.18 0.05 264.695) 0%, oklch(0.129 0.042 264.695) 100%);
+  --glow-primary: 0 0 40px -10px oklch(0.929 0.013 255.508 / 40%);
+  --glow-card: 0 10px 40px -15px oklch(0 0 0 / 50%);
 }
 
 @layer base {
