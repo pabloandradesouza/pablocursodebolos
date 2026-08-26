@@ -12,6 +12,7 @@ import {
   Cake,
   Sparkles,
   ArrowRight,
+  Award,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
