@@ -238,6 +238,64 @@ function LearnSection() {
   );
 }
 
+function GallerySection() {
+  const images = [
+    {
+      src: cakeArtistic1,
+      alt: "Bolo artístico decorado com flores de buttercream em tons pastel",
+      caption: "Flores de buttercream realistas",
+    },
+    {
+      src: cakeArtistic2,
+      alt: "Bolo de andares com decoração elegante em pasta americana e detalhes dourados",
+      caption: "Bolos de andar para eventos especiais",
+    },
+    {
+      src: cakeTechnique,
+      alt: "Técnica de confeitaria com bico de confeitar criando rosetas em um bolo",
+      caption: "Técnicas de bico de confeitar",
+    },
+  ];
+
+  return (
+    <section className="border-y border-border/30 bg-secondary/30 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+            BOLOS QUE VOCÊ VAI APRENDER A FAZER
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Técnicas profissionais para criar verdadeiras obras de arte comestíveis
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="group overflow-hidden rounded-2xl border border-border/50 bg-card shadow-glow-card"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4 text-center">
+                <p className="font-semibold text-card-foreground">{image.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function InfoSection() {
   const infos = [
     {
