@@ -482,6 +482,7 @@ function Index() {
         <Hero />
         <LearnSection />
         <InfoSection />
+        <MapSection />
         <AudienceSection />
         <TestimonialsSection />
         <FinalCtaSection />
