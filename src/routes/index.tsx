@@ -477,6 +477,68 @@ function AudienceSection() {
   );
 }
 
+function DiplomaSection() {
+  const benefits = [
+    "Certificado de conclusão impresso e digital",
+    "Comprovação oficial das técnicas aprendidas",
+    "Valoriza seu currículo na confeitaria",
+    "Aumenta a confiança dos seus clientes",
+  ];
+
+  return (
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-3xl border border-border/50 bg-card shadow-glow-card">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
+              <img
+                src={diplomaProfissional}
+                alt="Diploma profissional de confeitaria e decoração de bolos"
+                width={1200}
+                height={800}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 lg:bg-gradient-to-l" />
+            </div>
+
+            <div className="flex flex-col items-center p-8 text-center lg:items-start lg:text-left">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                <Award className="size-4" />
+                Certificação Inclusa
+              </div>
+
+              <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+                DIPLOMA PROFISSIONAL RECONHECIDO
+              </h2>
+
+              <p className="mt-4 text-lg text-muted-foreground">
+                Ao final do curso, você recebe um certificado que comprova suas habilidades e
+                aumenta sua credibilidade no mercado de confeitaria.
+              </p>
+
+              <div className="mt-6 w-full space-y-3">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                      <CheckCircle2 className="size-4 text-primary" />
+                    </div>
+                    <p className="text-left font-medium text-card-foreground">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <CtaButton size="lg">QUERO MEU DIPLOMA PROFISSIONAL</CtaButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TestimonialsSection() {
   const testimonials = [
     {
@@ -601,9 +663,11 @@ function Index() {
       <main>
         <Hero />
         <LearnSection />
+        <GallerySection />
         <InfoSection />
         <MapSection />
         <AudienceSection />
+        <DiplomaSection />
         <TestimonialsSection />
         <FinalCtaSection />
       </main>
