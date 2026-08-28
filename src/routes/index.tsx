@@ -13,12 +13,15 @@ import {
   Sparkles,
   ArrowRight,
   Award,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
 import cakeArtistic2 from "../../public/images/cake-artistic-2.jpg";
 import cakeTechnique from "../../public/images/cake-technique.jpg";
 import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
+import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +47,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const whatsappNumber = "5521999999999";
+const whatsappNumber = "552166787998";
+const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
   "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 1,99."
 );
@@ -291,6 +295,88 @@ function GallerySection() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VideoSection() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+            VEJA A DECORAÇÃO ACONTECER NA PRÁTICA
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Curso 100% presencial e prático — você aprende fazendo, com a mão na massa
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-border/50 bg-card shadow-glow-card">
+          <video
+            src={decorandoVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            className="aspect-video w-full object-cover"
+          />
+        </div>
+
+        <div className="mt-8 text-center">
+          <CtaButton size="lg">✅ GARANTIR MINHA VAGA AGORA</CtaButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section className="border-y border-border/30 bg-secondary/30 py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+          FALE COM A GENTE E GARANTA SUA VAGA
+        </h2>
+        <p className="mt-3 text-muted-foreground">
+          Tire suas dúvidas e faça sua inscrição direto pelo WhatsApp
+        </p>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <Card className="border-border/50 bg-card shadow-glow-card">
+            <CardContent className="flex flex-col items-center gap-3 p-6">
+              <Phone className="size-8 text-primary" />
+              <p className="text-sm font-medium text-muted-foreground">Telefone / Ligação</p>
+              <a
+                href={`tel:+${whatsappNumber}`}
+                className="text-2xl font-black text-foreground hover:text-primary"
+              >
+                {phoneDisplay}
+              </a>
+            </CardContent>
+          </Card>
+
+          <Card className="border-border/50 bg-card shadow-glow-card">
+            <CardContent className="flex flex-col items-center gap-3 p-6">
+              <MessageCircle className="size-8 text-primary" />
+              <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-black text-foreground hover:text-primary"
+              >
+                {phoneDisplay}
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8">
+          <CtaButton size="lg">✅ GARANTIR MINHA VAGA AGORA</CtaButton>
         </div>
       </div>
     </section>
@@ -649,6 +735,12 @@ function Footer() {
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Contato e WhatsApp:{" "}
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            {phoneDisplay}
+          </a>
+        </p>
         <p className="mt-6 text-xs text-muted-foreground">
           © {new Date().getFullYear()} Pablo Bolos Decorados. Todos os direitos reservados.
         </p>
@@ -665,11 +757,13 @@ function Index() {
         <Hero />
         <LearnSection />
         <GallerySection />
+        <VideoSection />
         <InfoSection />
         <MapSection />
         <AudienceSection />
         <DiplomaSection />
         <TestimonialsSection />
+        <ContactSection />
         <FinalCtaSection />
       </main>
       <Footer />
