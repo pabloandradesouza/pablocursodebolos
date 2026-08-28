@@ -301,6 +301,88 @@ function GallerySection() {
   );
 }
 
+function VideoSection() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+            VEJA A DECORAÇÃO ACONTECER NA PRÁTICA
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Curso 100% presencial e prático — você aprende fazendo, com a mão na massa
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-border/50 bg-card shadow-glow-card">
+          <video
+            src={decorandoVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            className="aspect-video w-full object-cover"
+          />
+        </div>
+
+        <div className="mt-8 text-center">
+          <CtaButton size="lg" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section className="border-y border-border/30 bg-secondary/30 py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
+          FALE COM A GENTE E GARANTA SUA VAGA
+        </h2>
+        <p className="mt-3 text-muted-foreground">
+          Tire suas dúvidas e faça sua inscrição direto pelo WhatsApp
+        </p>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <Card className="border-border/50 bg-card shadow-glow-card">
+            <CardContent className="flex flex-col items-center gap-3 p-6">
+              <Phone className="size-8 text-primary" />
+              <p className="text-sm font-medium text-muted-foreground">Telefone / Ligação</p>
+              <a
+                href={`tel:+${whatsappNumber}`}
+                className="text-2xl font-black text-foreground hover:text-primary"
+              >
+                {phoneDisplay}
+              </a>
+            </CardContent>
+          </Card>
+
+          <Card className="border-border/50 bg-card shadow-glow-card">
+            <CardContent className="flex flex-col items-center gap-3 p-6">
+              <MessageCircle className="size-8 text-primary" />
+              <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-black text-foreground hover:text-primary"
+              >
+                {phoneDisplay}
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8">
+          <CtaButton size="lg" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function InfoSection() {
   const infos = [
     {
