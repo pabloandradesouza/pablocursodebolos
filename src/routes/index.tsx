@@ -13,12 +13,15 @@ import {
   Sparkles,
   ArrowRight,
   Award,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
 import cakeArtistic2 from "../../public/images/cake-artistic-2.jpg";
 import cakeTechnique from "../../public/images/cake-technique.jpg";
 import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
+import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
