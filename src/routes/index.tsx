@@ -327,7 +327,7 @@ function VideoSection() {
         </div>
 
         <div className="mt-8 text-center">
-          <CtaButton size="lg" />
+          <CtaButton size="lg">✅ GARANTIR MINHA VAGA AGORA</CtaButton>
         </div>
       </div>
     </section>
@@ -376,7 +376,7 @@ function ContactSection() {
         </div>
 
         <div className="mt-8">
-          <CtaButton size="lg" />
+          <CtaButton size="lg">✅ GARANTIR MINHA VAGA AGORA</CtaButton>
         </div>
       </div>
     </section>
