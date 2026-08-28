@@ -751,11 +751,13 @@ function Index() {
         <Hero />
         <LearnSection />
         <GallerySection />
+        <VideoSection />
         <InfoSection />
         <MapSection />
         <AudienceSection />
         <DiplomaSection />
         <TestimonialsSection />
+        <ContactSection />
         <FinalCtaSection />
       </main>
       <Footer />
