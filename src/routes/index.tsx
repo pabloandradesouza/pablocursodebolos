@@ -735,6 +735,12 @@ function Footer() {
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Contato e WhatsApp:{" "}
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            {phoneDisplay}
+          </a>
+        </p>
         <p className="mt-6 text-xs text-muted-foreground">
           © {new Date().getFullYear()} Pablo Bolos Decorados. Todos os direitos reservados.
         </p>
