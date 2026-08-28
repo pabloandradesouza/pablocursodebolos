@@ -44,7 +44,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const whatsappNumber = "5521999999999";
+const whatsappNumber = "552166787998";
+const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
   "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 1,99."
 );
