@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -15,6 +16,8 @@ import {
   Award,
   Phone,
   MessageCircle,
+  Music,
+  VolumeX,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
