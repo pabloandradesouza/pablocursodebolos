@@ -141,6 +141,20 @@ function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="mb-6 flex items-center gap-3 rounded-full border border-border/50 bg-card/60 py-1.5 pl-1.5 pr-5 shadow-glow-card">
+              <img
+                src={pabloInstrutor}
+                alt="Pablo Souza, professor do curso Pablo Bolos Decorados"
+                width={1024}
+                height={1024}
+                className="size-11 rounded-full object-cover ring-2 ring-primary/60"
+              />
+              <div className="text-left">
+                <p className="text-sm font-bold leading-tight text-foreground">Pablo Souza</p>
+                <p className="text-xs leading-tight text-muted-foreground">Seu professor</p>
+              </div>
+            </div>
+
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sparkles className="size-4" />
               Curso Presencial Prático
