@@ -782,10 +782,52 @@ function Footer() {
   );
 }
 
+function MusicPlayer() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  function toggleMusic() {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio.volume = 0.4;
+      audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    }
+  }
+
+  return (
+    <>
+      <audio ref={audioRef} src={musicaTema.url} loop preload="none" />
+      <button
+        type="button"
+        onClick={toggleMusic}
+        aria-label={playing ? "Desligar música" : "Tocar música tema"}
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full border border-border/60 bg-card/90 px-4 py-3 text-sm font-medium text-card-foreground shadow-glow backdrop-blur transition-colors hover:bg-card"
+      >
+        {playing ? (
+          <>
+            <Music className="h-4 w-4 animate-pulse text-primary" />
+            Música tocando
+          </>
+        ) : (
+          <>
+            <VolumeX className="h-4 w-4 text-muted-foreground" />
+            Tocar música
+          </>
+        )}
+      </button>
+    </>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <MusicPlayer />
       <main>
         <Hero />
         <LearnSection />
