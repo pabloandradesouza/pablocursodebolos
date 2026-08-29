@@ -21,6 +21,7 @@ import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
 import cakeArtistic2 from "../../public/images/cake-artistic-2.jpg";
 import cakeTechnique from "../../public/images/cake-technique.jpg";
 import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
+import pabloInstrutor from "../../public/images/pablo-instrutor.jpg";
 import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
