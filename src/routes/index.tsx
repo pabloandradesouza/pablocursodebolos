@@ -103,7 +103,7 @@ function CtaButton({
     <Button
       asChild
       size="lg"
-      className={`group relative overflow-hidden rounded-full bg-primary font-bold text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-primary/80 active:scale-[0.98] ${sizeClasses[size]} ${className || ""}`}
+      className={`group relative max-w-full overflow-hidden whitespace-normal rounded-full bg-primary text-center font-bold text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-primary/80 active:scale-[0.98] ${sizeClasses[size]} ${className || ""}`}
     >
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
         {children}
