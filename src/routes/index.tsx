@@ -21,18 +21,19 @@ import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
 import cakeArtistic2 from "../../public/images/cake-artistic-2.jpg";
 import cakeTechnique from "../../public/images/cake-technique.jpg";
 import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
+import pabloInstrutor from "../../public/images/pablo-instrutor.jpg";
 import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 1,99" },
+      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
       {
         name: "description",
         content:
-          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 1,99.",
+          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 399,00.",
       },
-      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 1,99" },
+      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
       {
         property: "og:description",
         content:
@@ -50,7 +51,7 @@ export const Route = createFileRoute("/")({
 const whatsappNumber = "552166787998";
 const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
-  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 1,99."
+  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 399,00."
 );
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -77,7 +78,7 @@ function PriceTag({ size = "md" }: { size?: "sm" | "md" | "lg" | "xl" }) {
       <span
         className={`font-black leading-none tracking-tight text-primary ${sizeClasses[size]}`}
       >
-        R$ 1,99
+        R$ 399,00
       </span>
     </div>
   );
@@ -93,16 +94,16 @@ function CtaButton({
   className?: string;
 }) {
   const sizeClasses = {
-    default: "h-11 px-6 text-base",
-    lg: "h-14 px-8 text-lg md:text-xl",
-    xl: "h-16 px-10 text-xl md:text-2xl",
+    default: "min-h-11 h-auto px-6 py-2 text-base",
+    lg: "min-h-14 h-auto px-6 py-3 text-base sm:px-8 sm:text-lg md:text-xl",
+    xl: "h-auto min-h-16 px-6 py-3 text-lg sm:px-10 sm:text-xl md:text-2xl",
   };
 
   return (
     <Button
       asChild
       size="lg"
-      className={`group relative overflow-hidden rounded-full bg-primary font-bold text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-primary/80 active:scale-[0.98] ${sizeClasses[size]} ${className || ""}`}
+      className={`group relative max-w-full overflow-hidden whitespace-normal rounded-full bg-primary text-center font-bold text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-primary/80 active:scale-[0.98] ${sizeClasses[size]} ${className || ""}`}
     >
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
         {children}
@@ -138,8 +139,22 @@ function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.929_0.013_255.508/0.08),transparent_50%)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 [&>*]:min-w-0">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="mb-6 flex items-center gap-3 rounded-full border border-border/50 bg-card/60 py-1.5 pl-1.5 pr-5 shadow-glow-card">
+              <img
+                src={pabloInstrutor}
+                alt="Pablo Souza, professor do curso Pablo Bolos Decorados"
+                width={1024}
+                height={1024}
+                className="size-11 rounded-full object-cover ring-2 ring-primary/60"
+              />
+              <div className="text-left">
+                <p className="text-sm font-bold leading-tight text-foreground">Pablo Souza</p>
+                <p className="text-xs leading-tight text-muted-foreground">Seu professor</p>
+              </div>
+            </div>
+
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sparkles className="size-4" />
               Curso Presencial Prático
@@ -192,6 +207,20 @@ function Hero() {
                   <p className="text-sm font-medium text-muted-foreground">Avaliação das alunas</p>
                   <p className="text-lg font-bold text-card-foreground">4.9/5 estrelas</p>
                 </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -left-4 hidden items-center gap-3 rounded-xl border border-border/50 bg-card p-3 shadow-glow-card sm:flex md:-left-8">
+              <img
+                src={pabloInstrutor}
+                alt="Pablo Souza, instrutor do curso"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="size-14 rounded-lg object-cover ring-1 ring-primary/40"
+              />
+              <div>
+                <p className="text-sm font-bold text-card-foreground">Pablo Souza</p>
+                <p className="text-xs text-muted-foreground">Confeiteiro professor</p>
               </div>
             </div>
           </div>
@@ -444,7 +473,7 @@ function InfoSection() {
               <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
                 Valor do curso
               </p>
-              <p className="text-4xl font-black text-primary md:text-5xl">R$ 1,99</p>
+              <p className="text-4xl font-black text-primary md:text-5xl">R$ 399,00</p>
             </div>
             <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
           </CardContent>
@@ -576,7 +605,7 @@ function DiplomaSection() {
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-border/50 bg-card shadow-glow-card">
-          <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:grid-cols-2 [&>*]:min-w-0">
             <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
               <img
                 src={diplomaProfissional}
@@ -637,7 +666,7 @@ function TestimonialsSection() {
     {
       name: "Mariana Souza",
       role: "Aluna de abril",
-      text: "Paguei apenas R$ 1,99 e aprendi técnicas que mudaram minha confeitaria. Hoje já tenho encomendas toda semana.",
+      text: "Paguei apenas R$ 399,00 e aprendi técnicas que mudaram minha confeitaria. Hoje já tenho encomendas toda semana.",
       result: "Renda extra toda semana",
     },
     {
@@ -731,7 +760,7 @@ function Footer() {
           <Cake className="size-5 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <p className="mt-3 text-3xl font-black text-primary">R$ 1,99</p>
+        <p className="mt-3 text-3xl font-black text-primary">R$ 399,00</p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
