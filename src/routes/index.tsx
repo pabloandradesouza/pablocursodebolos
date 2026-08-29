@@ -94,9 +94,9 @@ function CtaButton({
   className?: string;
 }) {
   const sizeClasses = {
-    default: "h-11 px-6 text-base",
-    lg: "h-14 px-8 text-lg md:text-xl",
-    xl: "h-auto min-h-16 px-6 py-3 text-lg whitespace-normal text-center sm:px-10 sm:text-xl md:text-2xl",
+    default: "min-h-11 h-auto px-6 py-2 text-base",
+    lg: "min-h-14 h-auto px-6 py-3 text-base sm:px-8 sm:text-lg md:text-xl",
+    xl: "h-auto min-h-16 px-6 py-3 text-lg sm:px-10 sm:text-xl md:text-2xl",
   };
 
   return (
