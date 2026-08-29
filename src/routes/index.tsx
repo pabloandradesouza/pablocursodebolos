@@ -605,7 +605,7 @@ function DiplomaSection() {
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-border/50 bg-card shadow-glow-card">
-          <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:grid-cols-2 [&>*]:min-w-0">
             <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
               <img
                 src={diplomaProfissional}
