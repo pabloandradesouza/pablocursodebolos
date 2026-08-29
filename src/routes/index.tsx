@@ -26,6 +26,7 @@ import cakeTechnique from "../../public/images/cake-technique.jpg";
 import diplomaProfissional from "../../public/images/diploma-profissional.jpg";
 import pabloInstrutor from "../../public/images/pablo-instrutor.jpg";
 import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
+import musicaTema from "../../public/audio/musica-tema.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
