@@ -139,7 +139,7 @@ function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.929_0.013_255.508/0.08),transparent_50%)]" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 [&>*]:min-w-0">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="mb-6 flex items-center gap-3 rounded-full border border-border/50 bg-card/60 py-1.5 pl-1.5 pr-5 shadow-glow-card">
               <img
