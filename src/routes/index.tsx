@@ -209,6 +209,20 @@ function Hero() {
                 </div>
               </div>
             </div>
+            <div className="absolute -bottom-4 -left-4 hidden items-center gap-3 rounded-xl border border-border/50 bg-card p-3 shadow-glow-card sm:flex md:-left-8">
+              <img
+                src={pabloInstrutor}
+                alt="Pablo Souza, instrutor do curso"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="size-14 rounded-lg object-cover ring-1 ring-primary/40"
+              />
+              <div>
+                <p className="text-sm font-bold text-card-foreground">Pablo Souza</p>
+                <p className="text-xs text-muted-foreground">Confeiteiro professor</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
