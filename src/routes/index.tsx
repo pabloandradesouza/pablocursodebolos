@@ -26,13 +26,13 @@ import decorandoVideo from "../../public/videos/decorando-bolo.mp4.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 1,99" },
+      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
       {
         name: "description",
         content:
-          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 1,99.",
+          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 399,00.",
       },
-      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 1,99" },
+      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
       {
         property: "og:description",
         content:
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
 const whatsappNumber = "552166787998";
 const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
-  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 1,99."
+  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 399,00."
 );
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -77,7 +77,7 @@ function PriceTag({ size = "md" }: { size?: "sm" | "md" | "lg" | "xl" }) {
       <span
         className={`font-black leading-none tracking-tight text-primary ${sizeClasses[size]}`}
       >
-        R$ 1,99
+        R$ 399,00
       </span>
     </div>
   );
@@ -444,7 +444,7 @@ function InfoSection() {
               <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
                 Valor do curso
               </p>
-              <p className="text-4xl font-black text-primary md:text-5xl">R$ 1,99</p>
+              <p className="text-4xl font-black text-primary md:text-5xl">R$ 399,00</p>
             </div>
             <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
           </CardContent>
@@ -637,7 +637,7 @@ function TestimonialsSection() {
     {
       name: "Mariana Souza",
       role: "Aluna de abril",
-      text: "Paguei apenas R$ 1,99 e aprendi técnicas que mudaram minha confeitaria. Hoje já tenho encomendas toda semana.",
+      text: "Paguei apenas R$ 399,00 e aprendi técnicas que mudaram minha confeitaria. Hoje já tenho encomendas toda semana.",
       result: "Renda extra toda semana",
     },
     {
@@ -731,7 +731,7 @@ function Footer() {
           <Cake className="size-5 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <p className="mt-3 text-3xl font-black text-primary">R$ 1,99</p>
+        <p className="mt-3 text-3xl font-black text-primary">R$ 399,00</p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
