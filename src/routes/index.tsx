@@ -125,12 +125,23 @@ function Header() {
           <Cake className="size-6 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <Button
-          onClick={scrollToInscricao}
-          className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow-primary transition-all hover:scale-[1.02] hover:bg-primary/90 sm:px-6"
-        >
-          Quero Me Inscrever
-        </Button>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary md:inline-flex"
+          >
+            <WhatsAppIcon className="size-4 text-[#25D366]" />
+            {phoneDisplay}
+          </a>
+          <Button
+            onClick={scrollToInscricao}
+            className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow-primary transition-all hover:scale-[1.02] hover:bg-primary/90 sm:px-6"
+          >
+            Quero Me Inscrever
+          </Button>
+        </div>
       </div>
     </header>
   );
