@@ -125,12 +125,23 @@ function Header() {
           <Cake className="size-6 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <Button
-          onClick={scrollToInscricao}
-          className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow-primary transition-all hover:scale-[1.02] hover:bg-primary/90 sm:px-6"
-        >
-          Quero Me Inscrever
-        </Button>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1.5 text-sm font-semibold text-foreground transition-colors hover:text-primary md:inline-flex"
+          >
+            <WhatsAppIcon className="size-4 text-[#25D366]" />
+            {phoneDisplay}
+          </a>
+          <Button
+            onClick={scrollToInscricao}
+            className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-glow-primary transition-all hover:scale-[1.02] hover:bg-primary/90 sm:px-6"
+          >
+            Quero Me Inscrever
+          </Button>
+        </div>
       </div>
     </header>
   );
@@ -394,16 +405,9 @@ function ContactSection() {
 
           <Card className="border-border/50 bg-card shadow-glow-card">
             <CardContent className="flex flex-col items-center gap-3 p-6">
-              <MessageCircle className="size-8 text-primary" />
+              <WhatsAppIcon className="size-8 text-[#25D366]" />
               <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-black text-foreground hover:text-primary"
-              >
-                {phoneDisplay}
-              </a>
+              <WhatsAppPhoneLink className="text-2xl font-black text-foreground hover:text-primary" />
             </CardContent>
           </Card>
         </div>
@@ -768,11 +772,8 @@ function Footer() {
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Contato e WhatsApp:{" "}
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
-            {phoneDisplay}
-          </a>
+        <p className="mt-1 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          Contato e WhatsApp: <WhatsAppPhoneLink className="font-semibold text-primary" />
         </p>
         <p className="mt-6 text-xs text-muted-foreground">
           © {new Date().getFullYear()} Pablo Bolos Decorados. Todos os direitos reservados.
@@ -833,6 +834,20 @@ function WhatsAppIcon({ className }: { className?: string }) {
     >
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.297.298-.496.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.438C11.348 6.374 10.054 5.86 8.64 5.86c-.297 0-.595.026-.887.076l.057-.001c.884 0 1.685.357 2.267.935l.001.001c.581.58.937 1.381.937 2.266 0 .884-.356 1.684-.936 2.264l.001.001-.06.06c-.58.58-1.38.935-2.264.935-.884 0-1.685-.356-2.265-.936l-.001-.001-.06-.06A3.197 3.197 0 0 1 5.42 9.137c0-1.414.514-2.708 1.366-3.706a3.17 3.17 0 0 0-1.79.55A4.84 4.84 0 0 0 3.8 9.14c0 2.666 2.167 4.833 4.833 4.833 2.666 0 4.833-2.167 4.833-4.833 0-.744-.17-1.447-.472-2.076a4.84 4.84 0 0 0-1.994-1.996zM12 2C6.486 2 2 6.486 2 12c0 1.846.52 3.57 1.42 5.04L2 22l4.96-1.42A9.937 9.937 0 0 0 12 22c5.514 0 10-4.486 10-10S17.514 2 12 2z" />
     </svg>
+  );
+}
+
+function WhatsAppPhoneLink({ className }: { className?: string }) {
+  return (
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center gap-1.5 hover:underline ${className || ""}`}
+    >
+      <WhatsAppIcon className="size-4 shrink-0" />
+      {phoneDisplay}
+    </a>
   );
 }
 
