@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,6 +18,7 @@ import {
   MessageCircle,
   Music,
   VolumeX,
+  ClipboardList,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
@@ -31,13 +32,13 @@ import musicaTema from "../../public/audio/musica-tema.mp3.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
+      { title: "Pablo Bolos Decorados | Curso Presencial - A partir de R$ 399,00" },
       {
         name: "description",
         content:
-          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 399,00.",
+          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas com investimento a partir de R$ 399,00.",
       },
-      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
+      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - A partir de R$ 399,00" },
       {
         property: "og:description",
         content:
@@ -55,7 +56,7 @@ export const Route = createFileRoute("/")({
 const whatsappNumber = "552166787998";
 const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
-  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 399,00."
+  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados (investimento a partir de R$ 399,00)."
 );
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -77,7 +78,7 @@ function PriceTag({ size = "md" }: { size?: "sm" | "md" | "lg" | "xl" }) {
   return (
     <div className="flex flex-col items-center gap-1">
       <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-        Investimento
+        Investimento a partir de
       </span>
       <span
         className={`font-black leading-none tracking-tight text-primary ${sizeClasses[size]}`}
@@ -113,6 +114,22 @@ function CtaButton({
         {children}
         <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
       </a>
+    </Button>
+  );
+}
+
+function PriceTableButton({ className }: { className?: string }) {
+  return (
+    <Button
+      asChild
+      size="lg"
+      variant="outline"
+      className={`group max-w-full whitespace-normal rounded-full border-primary/40 bg-card/60 text-center font-bold text-primary transition-all duration-300 hover:scale-[1.02] hover:border-primary hover:bg-primary/10 min-h-14 h-auto px-6 py-3 text-base sm:px-8 sm:text-lg ${className || ""}`}
+    >
+      <Link to="/precos" target="_blank" rel="noopener noreferrer">
+        <ClipboardList className="mr-2 size-5" />
+        VER TABELA DE PREÇOS
+      </Link>
     </Button>
   );
 }
@@ -188,8 +205,9 @@ function Hero() {
               <PriceTag size="xl" />
             </div>
 
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <CtaButton size="xl">GARANTIR MINHA VAGA AGORA</CtaButton>
+              <PriceTableButton />
             </div>
 
             <p className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-destructive lg:justify-start">
@@ -479,11 +497,14 @@ function InfoSection() {
           <CardContent className="flex flex-col items-center gap-4 p-8 md:flex-row md:justify-between">
             <div className="text-center md:text-left">
               <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-                Valor do curso
+                Investimento a partir de
               </p>
               <p className="text-4xl font-black text-primary md:text-5xl">R$ 399,00</p>
             </div>
-            <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
+            <div className="flex flex-col items-center gap-3">
+              <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
+              <PriceTableButton />
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -746,6 +767,7 @@ function FinalCtaSection() {
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <CtaButton size="xl">QUERO FAZER O CURSO AGORA</CtaButton>
+          <PriceTableButton />
         </div>
 
         <p className="mt-6 flex items-center justify-center gap-2 text-sm font-semibold text-destructive">
@@ -768,7 +790,10 @@ function Footer() {
           <Cake className="size-5 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <p className="mt-3 text-3xl font-black text-primary">R$ 399,00</p>
+        <p className="mt-3 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          Investimento a partir de
+        </p>
+        <p className="mt-1 text-3xl font-black text-primary">R$ 399,00</p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
