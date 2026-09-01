@@ -31,13 +31,13 @@ import musicaTema from "../../public/audio/musica-tema.mp3.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
+      { title: "Pablo Bolos Decorados | Curso Presencial - A partir de R$ 399,00" },
       {
         name: "description",
         content:
-          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas por apenas R$ 399,00.",
+          "Aprenda a decorar bolos no curso presencial Pablo Bolos Decorados. 3 horas de aula prática em Belford Roxo. Vagas limitadas com investimento a partir de R$ 399,00.",
       },
-      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - Apenas R$ 399,00" },
+      { property: "og:title", content: "Pablo Bolos Decorados | Curso Presencial - A partir de R$ 399,00" },
       {
         property: "og:description",
         content:
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/")({
 const whatsappNumber = "552166787998";
 const phoneDisplay = "(21) 6678-7998";
 const whatsappMessage = encodeURIComponent(
-  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados por R$ 399,00."
+  "Olá! Quero garantir minha vaga no curso Pablo Bolos Decorados (investimento a partir de R$ 399,00)."
 );
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -77,7 +77,7 @@ function PriceTag({ size = "md" }: { size?: "sm" | "md" | "lg" | "xl" }) {
   return (
     <div className="flex flex-col items-center gap-1">
       <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-        Investimento
+        Investimento a partir de
       </span>
       <span
         className={`font-black leading-none tracking-tight text-primary ${sizeClasses[size]}`}
