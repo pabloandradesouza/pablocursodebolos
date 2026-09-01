@@ -205,8 +205,9 @@ function Hero() {
               <PriceTag size="xl" />
             </div>
 
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
               <CtaButton size="xl">GARANTIR MINHA VAGA AGORA</CtaButton>
+              <PriceTableButton />
             </div>
 
             <p className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-destructive lg:justify-start">
@@ -496,11 +497,14 @@ function InfoSection() {
           <CardContent className="flex flex-col items-center gap-4 p-8 md:flex-row md:justify-between">
             <div className="text-center md:text-left">
               <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-                Valor do curso
+                Investimento a partir de
               </p>
               <p className="text-4xl font-black text-primary md:text-5xl">R$ 399,00</p>
             </div>
-            <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
+            <div className="flex flex-col items-center gap-3">
+              <CtaButton size="lg">QUERO FAZER O CURSO AGORA</CtaButton>
+              <PriceTableButton />
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -763,6 +767,7 @@ function FinalCtaSection() {
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <CtaButton size="xl">QUERO FAZER O CURSO AGORA</CtaButton>
+          <PriceTableButton />
         </div>
 
         <p className="mt-6 flex items-center justify-center gap-2 text-sm font-semibold text-destructive">
@@ -785,7 +790,10 @@ function Footer() {
           <Cake className="size-5 text-primary" />
           <span className="text-lg font-bold text-foreground">Pablo Bolos Decorados</span>
         </div>
-        <p className="mt-3 text-3xl font-black text-primary">R$ 399,00</p>
+        <p className="mt-3 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          Investimento a partir de
+        </p>
+        <p className="mt-1 text-3xl font-black text-primary">R$ 399,00</p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Jorge Julio Costa dos Santos — Belford Roxo
         </p>
