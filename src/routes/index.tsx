@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,6 +18,7 @@ import {
   MessageCircle,
   Music,
   VolumeX,
+  ClipboardList,
 } from "lucide-react";
 import heroCake from "../../public/images/hero-cake.jpg";
 import cakeArtistic1 from "../../public/images/cake-artistic-1.jpg";
@@ -113,6 +114,22 @@ function CtaButton({
         {children}
         <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
       </a>
+    </Button>
+  );
+}
+
+function PriceTableButton({ className }: { className?: string }) {
+  return (
+    <Button
+      asChild
+      size="lg"
+      variant="outline"
+      className={`group max-w-full whitespace-normal rounded-full border-primary/40 bg-card/60 text-center font-bold text-primary transition-all duration-300 hover:scale-[1.02] hover:border-primary hover:bg-primary/10 min-h-14 h-auto px-6 py-3 text-base sm:px-8 sm:text-lg ${className || ""}`}
+    >
+      <Link to="/precos" target="_blank" rel="noopener noreferrer">
+        <ClipboardList className="mr-2 size-5" />
+        VER TABELA DE PREÇOS
+      </Link>
     </Button>
   );
 }
